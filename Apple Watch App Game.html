@@ -69,10 +69,13 @@
 								
 										<div class="embed-dimensions" style="max-width: 1080px; max-height: 720px; margin: 0 auto;">
 											<div class="embed-aspect-ratio" style="padding-bottom: 75.000000%; position: relative; height: 0px;">
-												<iframe class="embed-content"
+												<!--<iframe class="embed-content"
 													src="images/Foodslots prototype.mp4" frameborder="0"
-													allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-											</div>
+													allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>-->
+												<div id="muteYouTubeVideoPlayer"></div>
+	<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/IiSTwZN2scs ?rel=0&iv_load_policy=3&modestbranding=1&showinfo=0&autoplay=1&loop=1&playlist=IiSTwZN2scs" frameborder="0"
+														allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>											</div>
 										</div>
 									</div>
 								</div>
@@ -114,6 +117,38 @@
 			</div>
 
 		<!-- Scripts -->
+
+
+<script async src="https://www.youtube.com/embed/IiSTwZN2scs"></script>
+<script>
+	function onYouTubeIframeAPIReady() {
+		var player;
+		player = new YT.Player('muteYouTubeVideoPlayer', {
+			videoId: 'IiSTwZN2scs', // YouTube 影片ID
+			            // 播放器度 (px)
+			playerVars: {
+				autoplay: 1,        // 在讀取時自動播放影片
+				controls: 1,        // 在播放器顯示暫停／播放按鈕
+				showinfo: 0,        // 隱藏影片標題
+				modestbranding: 1,  // 隱藏YouTube Logo
+				loop: 1,            // 讓影片循環播放
+				fs: 0,              // 隱藏全螢幕按鈕
+				cc_load_policty: 0, // 隱藏字幕
+				iv_load_policy: 3,  // 隱藏影片註解
+				autohide: 0         // 當播放影片時隱藏影片控制列
+			},
+			events: {
+				onReady: function (e) {
+					e.target.mute();
+				}
+			}
+		});
+	}
+
+ // Written by @labnol 
+</script>
+
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
